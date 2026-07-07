@@ -1,0 +1,44 @@
+---
+import SEO from "../components/SEO.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  seoTitle?: string;
+  ogImage?: string;
+  keywords?: string[];
+  noIndex?: boolean;
+  canonicalUrl?: string;
+}
+
+const {
+  title,
+  description,
+  seoTitle,
+  ogImage,
+  keywords,
+  noIndex,
+  canonicalUrl,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <SEO
+      title={title}
+      description={description}
+      seoTitle={seoTitle}
+      ogImage={ogImage}
+      keywords={keywords}
+      noIndex={noIndex}
+      canonicalUrl={canonicalUrl}
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

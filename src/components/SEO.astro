@@ -1,0 +1,50 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  seoTitle?: string;
+  ogImage?: string;
+  keywords?: string[];
+  noIndex?: boolean;
+  canonicalUrl?: string;
+}
+
+const {
+  title,
+  description = "",
+  seoTitle,
+  ogImage,
+  keywords = [],
+  noIndex = false,
+  canonicalUrl,
+} = Astro.props;
+
+const siteUrl = import.meta.env.SITE ?? "https://yoursite.com";
+const pageUrl = canonicalUrl ?? new URL(Astro.url.pathname, siteUrl).href;
+const finalTitle = seoTitle ?? title;
+const ogImageUrl = ogImage
+  ? new URL(ogImage, siteUrl).href
+  : new URL("/og-default.png", siteUrl).href;
+---
+
+<!-- 基础 SEO -->
+<title>{finalTitle}</title>
+<meta name="description" content={description} />
+{keywords.length > 0 && (
+  <meta name="keywords" content={keywords.join(", ")} />
+)}
+{noIndex && <meta name="robots" content="noindex, nofollow" />}
+<link rel="canonical" href={pageUrl} />
+
+<!-- Open Graph（Facebook / 微信分享） -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={pageUrl} />
+<meta property="og:title" content={finalTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImageUrl} />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={finalTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageUrl} />

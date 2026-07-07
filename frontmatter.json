@@ -1,0 +1,126 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.framework.id": "astro",
+  "frontMatter.preview.host": "http://localhost:4321",
+  "frontMatter.content.publicFolder": "public",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "posts",
+      "path": "[[workspace]]/src/content/posts",
+      "contentTypes": ["posts"]
+    },
+    {
+      "title": "products",
+      "path": "[[workspace]]/src/content/products",
+      "contentTypes": ["products"]
+    }
+  ],
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "posts",
+      "pageBundle": false,
+      "previewPath": "'posts'",
+      "filePrefix": null,
+      "clearEmpty": true,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "pubDate",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Hero Image",
+          "name": "heroImage",
+          "type": "image",
+          "isPreviewImage": true
+        },
+        {
+          "title": "SEO Title",
+          "name": "seoTitle",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "OG Image",
+          "name": "ogImage",
+          "type": "image"
+        },
+        {
+          "title": "Keywords",
+          "name": "keywords",
+          "type": "tags"
+        },
+        {
+          "title": "No Index",
+          "name": "noIndex",
+          "type": "boolean"
+        }
+      ]
+    },
+    {
+      "name": "products",
+      "pageBundle": false,
+      "previewPath": "'products'",
+      "filePrefix": null,
+      "clearEmpty": true,
+      "fields": [
+        {
+          "title": "Name",
+          "name": "name",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "Price",
+          "name": "price",
+          "type": "string"
+        },
+        {
+          "title": "Image",
+          "name": "image",
+          "type": "image",
+          "isPreviewImage": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "SEO Title",
+          "name": "seoTitle",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "OG Image",
+          "name": "ogImage",
+          "type": "image"
+        },
+        {
+          "title": "Keywords",
+          "name": "keywords",
+          "type": "tags"
+        },
+        {
+          "title": "No Index",
+          "name": "noIndex",
+          "type": "boolean"
+        }
+      ]
+    }
+  ]
+}

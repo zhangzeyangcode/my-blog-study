@@ -1,0 +1,15 @@
+{
+    "frontMatter.content.pageFolders": [
+        {
+            "title": "posts",
+            "path": "[[workspace]]/src/content/posts"
+        },
+        {
+            "title": "products",
+            "path": "[[workspace]]/src/content/products"
+        }
+    ],
+    "frontMatter.content.publicFolder": "public",
+    "[markdown]": {
+    }
+}
